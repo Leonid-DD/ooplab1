@@ -24,7 +24,6 @@ public class WikipediaAPIV2 {
         connection.setConnectTimeout(15000);
         connection.setReadTimeout(15000);
 
-        // Добавляем задержку для соблюдения лимитов API
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
@@ -56,7 +55,7 @@ public class WikipediaAPIV2 {
     }
 
     public String getPageUrl(String title) throws Exception {
-        return PAGE_URL + URLEncoder.encode(title.replace(" ", "_"), StandardCharsets.UTF_8.toString());
+        return PAGE_URL + URLEncoder.encode(title.replace(" ", "_"), StandardCharsets.UTF_8);
     }
 
     public String getPageUrl(int pageId) {

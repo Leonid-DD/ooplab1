@@ -34,7 +34,6 @@ public class WikipediaSearchApp {
 
                 System.out.println("Ищем: " + query + "...");
 
-                // Выполняем поиск
                 String jsonResponse = wikipediaAPI.search(query);
                 SearchResult[] results = parser.parseSearchResponse(jsonResponse);
 
@@ -44,10 +43,8 @@ public class WikipediaSearchApp {
                     continue;
                 }
 
-                // Выводим результаты
                 displaySearchResults(results);
 
-                // Предлагаем выбрать статью
                 if (selectAndOpenArticle(results)) {
                     break;
                 }
@@ -110,7 +107,6 @@ public class WikipediaSearchApp {
                 if (choice >= 1 && choice <= results.length) {
                     SearchResult selected = results[choice - 1];
 
-                    // Пробуем оба способа формирования URL
                     String pageUrl;
                     try {
                         pageUrl = wikipediaAPI.getPageUrl(selected.getTitle());

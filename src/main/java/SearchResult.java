@@ -14,7 +14,6 @@ public class SearchResult {
         this.snippet = snippet;
     }
 
-    // Геттеры
     public int getPageId() { return pageId; }
     public String getTitle() { return title; }
     public String getSnippet() { return snippet; }

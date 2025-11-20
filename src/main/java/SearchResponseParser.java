@@ -7,7 +7,6 @@ public class SearchResponseParser {
         try {
             JsonObject jsonObject = JsonParser.parseString(jsonResponse).getAsJsonObject();
 
-            // Проверяем наличие ошибки
             if (jsonObject.has("error")) {
                 JsonObject error = jsonObject.getAsJsonObject("error");
                 String errorInfo = error.get("info").getAsString();
@@ -16,7 +15,6 @@ public class SearchResponseParser {
 
             JsonObject query = jsonObject.getAsJsonObject("query");
 
-            // Проверяем, есть ли результаты
             if (query == null || !query.has("search")) {
                 return new SearchResult[0];
             }
