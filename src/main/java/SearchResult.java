@@ -25,23 +25,3 @@ public class SearchResult {
     }
 }
 
-class SearchResponseParser {
-    public SearchResult[] parseSearchResponse(String jsonResponse) {
-        JsonObject jsonObject = JsonParser.parseString(jsonResponse).getAsJsonObject();
-        JsonObject query = jsonObject.getAsJsonObject("query");
-        JsonArray searchResults = query.getAsJsonArray("search");
-
-        SearchResult[] results = new SearchResult[searchResults.size()];
-
-        for (int i = 0; i < searchResults.size(); i++) {
-            JsonObject result = searchResults.get(i).getAsJsonObject();
-            int pageId = result.get("pageid").getAsInt();
-            String title = result.get("title").getAsString();
-            String snippet = result.get("snippet").getAsString();
-
-            results[i] = new SearchResult(pageId, title, snippet);
-        }
-
-        return results;
-    }
-}
