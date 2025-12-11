@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class WikipediaSearchApp {
-    private WikipediaAPIV2 wikipediaAPI;
+public class Main {
+    private API wikipediaAPI;
     private SearchResponseParser parser;
     private BrowserManager browserManager;
     private Scanner scanner;
 
-    public WikipediaSearchApp() {
-        this.wikipediaAPI = new WikipediaAPIV2();
+    public Main() {
+        this.wikipediaAPI = new API();
         this.parser = new SearchResponseParser();
         this.browserManager = new BrowserManager();
         this.scanner = new Scanner(System.in, "UTF-8");
@@ -133,7 +133,7 @@ public class WikipediaSearchApp {
     }
 
     public static void main(String[] args) {
-        WikipediaSearchApp app = new WikipediaSearchApp();
+        Main app = new Main();
         app.run();
     }
 }

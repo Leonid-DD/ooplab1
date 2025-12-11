@@ -5,7 +5,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class WikipediaAPIV2 {
+public class API {
     private static final String SEARCH_URL = "https://ru.wikipedia.org/w/api.php?" +
             "action=query&format=json&list=search&srlimit=10&srsearch=";
     private static final String PAGE_URL = "https://ru.wikipedia.org/wiki/";
