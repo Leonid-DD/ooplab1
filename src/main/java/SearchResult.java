@@ -23,4 +23,3 @@ public class SearchResult {
         return String.format("%s (ID: %d)\n%s\n", title, pageId, snippet.replaceAll("<[^>]*>", ""));
     }
 }
-
