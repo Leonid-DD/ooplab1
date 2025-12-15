@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Main {
+public class WikipediaSearchApp {
     private API wikipediaAPI;
     private SearchResponseParser parser;
     private BrowserManager browserManager;
     private Scanner scanner;
 
-    public Main() {
+    public WikipediaSearchApp() {
         this.wikipediaAPI = new API();
         this.parser = new SearchResponseParser();
         this.browserManager = new BrowserManager();
@@ -133,7 +133,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main app = new Main();
+        WikipediaSearchApp app = new WikipediaSearchApp();
         app.run();
     }
 }
